@@ -13,9 +13,11 @@
   ],
   "scripts": {
     "build": "gatsby build",
+    "proxy": "npx @staticcms/proxy-server",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
+    "dev": "concurrently \"npm:proxy\" \"npm:start\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -40,6 +42,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.0",
     "prettier": "2.8.8"
   }
 }
