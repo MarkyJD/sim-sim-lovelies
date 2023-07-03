@@ -9,16 +9,43 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Sim Sim Lovelies`,
+    image: `/img/dog-bg.jpg`,
     author: {
-      name: `Static CMS`,
-      summary: `. A Git-based CMS for Static Site Generators`,
+      name: `Mark Dodson`,
+      social: {
+        github: `MarkyJD`,
+        twitter: `MarkyJD`,
+      },
+      summary: `Web Developer`,
     },
-    description: `A Git-based CMS for Static Site Generators`,
-    siteUrl: `https://gatsby.staticcms.org/`,
-    social: {
-      twitter: `StaticJsCMS`,
-    },
+    description: `Registered MDBA Breeder of Toy Poodles located in the beautiful Connewarre, Victoria. We breed for health, temperament and conformation`,
+    siteUrl: `https://simsimlovelies.com.au/`,
+    keywords: [
+      "toy poodles",
+      "breeder",
+      "Victoria",
+      "Connewarre",
+      "Australia",
+      "puppies",
+      "toy poodle puppies",
+      "toy poodle breeder",
+      "toy poodle breeder Victoria",
+      "toy poodle breeder Australia",
+      "toy poodle breeder Connewarre",
+      "toy poodle breeder Geelong",
+      "toy poodle breeder Melbourne",
+      "toy poodle breeder Ballarat",
+      "toy poodle breeder Bendigo",
+      "toy poodle breeder Warrnambool",
+      "toy poodle breeder Colac",
+      "toy poodle breeder Torquay",
+      "toy poodle breeder Ocean Grove",
+      "toy poodle breeder Barwon Heads",
+      "toy poodle breeder Bellarine Peninsula",
+      "toy poodle breeder Surf Coast",
+      "toy poodle breeder Bellarine",
+    ],
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -27,8 +54,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/`,
+        name: `content`,
       },
     },
     {
@@ -77,7 +104,9 @@ module.exports = {
         `,
         feeds: [
           {
+            // @ts-ignore
             serialize: ({ query: { site, allMarkdownRemark } }) => {
+              // @ts-ignore
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
@@ -85,8 +114,8 @@ module.exports = {
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                });
+              });
             },
             query: `{
               allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
@@ -124,4 +153,4 @@ module.exports = {
       },
     },
   ],
-}
+};

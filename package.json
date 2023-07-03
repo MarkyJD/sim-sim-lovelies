@@ -1,15 +1,14 @@
 {
-  "name": "static-cms-gatsby-netlify-template",
+  "name": "sim-sim-lovelies",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "A starter for a blog powered by Gatsby and Static CMS",
-  "repository": "https://github.com/StaticJsCMS/static-cms-gatsby-netlify-template",
-  "bugs": "https://github.com/StaticJsCMS/static-cms-gatsby-netlify-template/issues",
+  "description": "Registered MDBA Breeder of Toy Poodles located in the beautiful Connewarre, Victoria. We breed for health, temperament and conformation.",
+  "repository": "https://github.com/MarkyJD/sim-sim-lovelies",
+  "bugs": "https://github.com/MarkyJD/sim-sim-lovelies/issues",
   "keywords": [
-    "gatsby",
-    "static",
-    "cms",
-    "netlify"
+    "breeder site",
+    "toy poodle breeder",
+    "blog"
   ],
   "scripts": {
     "build": "gatsby build",
