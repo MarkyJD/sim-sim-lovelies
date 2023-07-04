@@ -11,14 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `Sim Sim Lovelies`,
     image: `/img/dog-bg.jpg`,
-    author: {
-      name: `Mark Dodson`,
-      social: {
-        github: `MarkyJD`,
-        twitter: `MarkyJD`,
-      },
-      summary: `Web Developer`,
-    },
+    author: `MarkyJD`,
     description: `Registered MDBA Breeder of Toy Poodles located in the beautiful Connewarre, Victoria. We breed for health, temperament and conformation`,
     siteUrl: `https://simsimlovelies.com.au/`,
     keywords: [
@@ -48,9 +41,6 @@ module.exports = {
     ],
   },
   plugins: [
-    `gatsby-plugin-image`,
-    `gatsby-plugin-static-cms`,
-    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,10 +51,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `img`,
+        path: `${__dirname}/static/img`,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-static-cms`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -87,6 +80,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -138,19 +132,19 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Gatsby`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `Gatsby Starter Blog`,
+    //     short_name: `Gatsby`,
+    //     start_url: `/`,
+    //     background_color: `#ffffff`,
+    //     // This will impact how browsers show your PWA/website
+    //     // https://css-tricks.com/meta-theme-color-and-trickery/
+    //     // theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+    //   },
+    // },
   ],
 };

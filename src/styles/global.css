@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .markdown {
+    @apply prose prose-a:text-amber-900 hover:prose-a:text-amber-700 font-montserrat;
+  }
+
+  .btn-learn-more {
+    @apply transition-all font-montserrat px-5 py-2 border-2 border-sky-800 rounded-md hover:shadow-xl shadow text-gray-100 bg-sky-800 text-sm font-bold hover:bg-sky-900 hover:border-sky-900;
+  }
+
+  .btn-learn-more-amber {
+    @apply transition-all font-montserrat px-5 py-2 border-2 border-amber-400 rounded-md hover:shadow-xl shadow text-zinc-900 bg-amber-400 text-sm font-bold hover:bg-amber-500 hover:border-amber-500;
+  }
+}

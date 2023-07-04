@@ -162,9 +162,24 @@ collections:
                 name: article
                 widget: object
                 fields:
-                  - { label: Heading, name: heading, widget: string }
-                  - { label: Content, name: content, widget: markdown }
-                  - { label: Image, name: image, widget: image }
+                  - {
+                      label: Heading,
+                      name: heading,
+                      widget: string,
+                      default: "Heading",
+                    }
+                  - {
+                      label: Content,
+                      name: content,
+                      widget: markdown,
+                      default: "Content",
+                    }
+                  - {
+                      label: Image,
+                      name: image,
+                      widget: image,
+                      default: "Image",
+                    }
           - label: "Contact parallax"
             name: contact_parallax
             widget: object
