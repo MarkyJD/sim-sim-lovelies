@@ -1,33 +1,34 @@
 {
-  "name": "static-cms-gatsby-netlify-template",
+  "name": "sim-sim-lovelies",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "A starter for a blog powered by Gatsby and Static CMS",
-  "repository": "https://github.com/StaticJsCMS/static-cms-gatsby-netlify-template",
-  "bugs": "https://github.com/StaticJsCMS/static-cms-gatsby-netlify-template/issues",
+  "description": "Registered MDBA Breeder of Toy Poodles located in the beautiful Connewarre, Victoria. We breed for health, temperament and conformation.",
+  "repository": "https://github.com/MarkyJD/sim-sim-lovelies",
+  "bugs": "https://github.com/MarkyJD/sim-sim-lovelies/issues",
   "keywords": [
-    "gatsby",
-    "static",
-    "cms",
-    "netlify"
+    "breeder site",
+    "toy poodle breeder",
+    "blog"
   ],
   "scripts": {
     "build": "gatsby build",
+    "proxy": "npx @staticcms/proxy-server",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
+    "dev": "concurrently \"npm:proxy\" \"npm:start\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@fontsource/merriweather": "4.5.14",
-    "@fontsource/montserrat": "4.5.14",
     "@staticcms/app": "2.4.4",
+    "date-fns": "^2.30.0",
     "gatsby": "5.7.0",
     "gatsby-plugin-feed": "5.7.0",
     "gatsby-plugin-image": "3.7.0",
     "gatsby-plugin-manifest": "5.7.0",
     "gatsby-plugin-sharp": "5.7.0",
+    "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-static-cms": "2.0.2",
     "gatsby-remark-images": "7.7.0",
     "gatsby-remark-prismjs": "7.7.0",
@@ -37,9 +38,25 @@
     "gatsby-transformer-sharp": "5.7.0",
     "prismjs": "1.29.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-responsive-carousel": "^3.2.23",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
-    "prettier": "2.8.8"
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "gatsby-plugin-postcss": "^6.11.0",
+    "postcss": "^8.4.24",
+    "prettier": "2.8.8",
+    "tailwindcss": "^3.3.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
+    "typescript": "^5.1.6"
   }
 }
