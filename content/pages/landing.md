@@ -3,7 +3,7 @@ template_key: index_page
 hero:
   title: Sim Sim Lovelies
   subtitle: Registered MDBA Breeder - 22084
-  tagline: Healthy, happy toy poodles for your loving care
+  tagline: Happy, healthy toy poodles for your loving care
   description: We are dedicated to breeding healthy and happy Toy Poodles with
     excellent temperaments. Our goal is to produce high-quality puppies that are
     not only beautiful, but also well-suited for families and individuals as
@@ -53,16 +53,26 @@ our_family:
   our_family_photos:
     - our_family_dog_name: Henry
       our_family_dog_image: /img/afif-ramdhasuma-y6p1gpshae8-unsplash.jpg
-      our_family_about_dog: Henry the apricot toy poodle was always eager to please. He loved going for walks and playing fetch with his owners. One day, while on a walk, he spotted a butterfly and chased after it, leading his owners on a wild adventure through the park.
+      our_family_about_dog: Henry the apricot toy poodle was always eager to please.
+        He loved going for walks and playing fetch with his owners. One day,
+        while on a walk, he spotted a butterfly and chased after it, leading his
+        owners on a wild adventure through the park.
     - our_family_dog_name: Steve Buscemi
       our_family_dog_image: /img/alison-pang-c2xo2ltne7a-unsplash.jpg
-      our_family_about_dog: An apricot toy poodle is a small dog breed that is characterized by its apricot-colored coat and its small size. They are known for being friendly, intelligent, and easy to train. They are known for being friendly, intelligent, and easy to train.
+      our_family_about_dog: An apricot toy poodle is a small dog breed that is
+        characterized by its apricot-colored coat and its small size. They are
+        known for being friendly, intelligent, and easy to train. They are known
+        for being friendly, intelligent, and easy to train.
     - our_family_dog_name: Spartacus
       our_family_dog_image: /img/alison-pang-w8upz64lsz4-unsplash.jpg
-      our_family_about_dog: Spartacus the brown toy poodle was a fierce and brave dog. He protected his owners from danger and always stood by them through thick and thin.
+      our_family_about_dog: Spartacus the brown toy poodle was a fierce and brave dog.
+        He protected his owners from danger and always stood by them through
+        thick and thin.
     - our_family_dog_name: Jesus
       our_family_dog_image: /img/dog-bg.jpg
-      our_family_about_dog: Jesus the brown toy poodle was a gentle and loving companion, always bringing joy and comfort to those around him. He was known for his kind and forgiving nature, just like his namesake.
+      our_family_about_dog: Jesus the brown toy poodle was a gentle and loving
+        companion, always bringing joy and comfort to those around him. He was
+        known for his kind and forgiving nature, just like his namesake.
 gallery:
   gallery_title: Gallery
   gallery_subtitle: Some photos from Sim Sim Lovelies
