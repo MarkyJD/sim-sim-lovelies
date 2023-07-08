@@ -232,6 +232,45 @@ collections:
                   widget: boolean,
                   default: true,
                 }
+      - label: FAQS
+        name: FAQS
+        file: "content/pages/faqs.md"
+        fields:
+          - label: 'Template Key (Do not edit. Must be "faqs_page")'
+            name: template_key
+            widget: string
+            default: faqs_page
+            required: true
+            hint: "LEAVE BLANK"
+
+          - label: Banner
+            name: banner
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subtitle, name: subtitle, widget: markdown }
+              - { label: "Banner Image", name: image, widget: image }
+          - label: FAQS
+            name: faqs
+            widget: list
+            fields:
+              - label: FAQ
+                name: faq
+                widget: object
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Answer, name: answer, widget: markdown }
+          - label: "Contact parallax"
+            name: contact_parallax
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - {
+                  label: "Show Parallax",
+                  name: show,
+                  widget: boolean,
+                  default: true,
+                }
   # Site Settings
   - label: "Site Settings"
     name: site_settings
