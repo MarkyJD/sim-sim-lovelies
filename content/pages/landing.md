@@ -3,7 +3,7 @@ template_key: index_page
 hero:
   title: Sim Sim Lovelies
   subtitle: Registered MDBA Breeder - 22084
-  tagline: Happy, healthy toy poodles for your loving care
+  tagline: Really happy, healthy toy poodles for your loving care
   description: We are dedicated to breeding healthy and happy Toy Poodles with
     excellent temperaments. Our goal is to produce high-quality puppies that are
     not only beautiful, but also well-suited for families and individuals as
