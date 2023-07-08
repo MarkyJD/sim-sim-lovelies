@@ -104,8 +104,8 @@ export default function IndexPageTemplate({ data }: IndexPageTemplateProps) {
           </BlurbsContainer>
           <PuppiesForSale />
           <OurFamily />
-          <Testimonials />
           <FAQShort />
+          <Testimonials />
           <Parallax image="https://wallpapercave.com/wp/wp7310478.jpg">
             <ContactCTA />
           </Parallax>

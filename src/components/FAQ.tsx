@@ -22,7 +22,7 @@ export default function FAQ({ question, answer, index }: FAQProps) {
       className="relative p-3 py-5 border-b border-zinc-400 group"
     >
       <div className="flex space-x-3">
-        <div className="text-2xl text-zinc-700 group-hover:text-sky-800">
+        <div className="text-2xl text-amber-600 group-hover:text-sky-800">
           {isOpen ? <BiMinus /> : <BiPlus />}
         </div>
         <h3 className="font-montserrat font-semibold text-zinc-700 group-hover:text-sky-800 flex items-center justify-between">

@@ -6,7 +6,7 @@ export interface TOurFamily {
       our_family_about_dog: string;
       our_family_dog_image: any;
       our_family_dog_name: string;
-    },
+    }
   ];
 }
 
@@ -78,6 +78,12 @@ export interface TArticle {
     image: string;
   };
 }
+
+export interface TFaq {
+  question: string;
+  answer: string;
+}
+
 export interface TAboutPageFrontmatter {
   banner: TBanner;
   articles: [TArticle];
@@ -87,8 +93,22 @@ export interface TAboutPageFrontmatter {
   };
 }
 
+export interface TFaqsPageFrontmatter {
+  banner: TBanner;
+  faqs: [TFaq];
+  contact_parallax: {
+    show: boolean;
+    image: string;
+  };
+}
+
 export interface TAboutPageQueryResult {
   markdownRemark: {
     frontmatter: TAboutPageFrontmatter;
+  };
+}
+export interface TFaqsPageQueryResult {
+  markdownRemark: {
+    frontmatter: TFaqsPageFrontmatter;
   };
 }
