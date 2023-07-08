@@ -1,12 +1,10 @@
-import * as React from "react";
-import Article from "@/components/About/Article";
+import React, { useState, useEffect } from "react";
 import Banner from "@/components/Banner";
-import Intro from "@/components/Intro";
 import ContactCTA from "@/components/Landing/ContactCTA";
 import Parallax from "@/components/Parallax";
-import { TFaqsPageQueryResult } from "@/types";
-import { ar } from "date-fns/locale";
+import { TFaq, TFaqsPageQueryResult } from "@/types";
 import FAQ from "@/components/FAQ";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 
 type FaqsPageTemplateProps = {
   data: TFaqsPageQueryResult;
@@ -19,6 +17,21 @@ export default function FaqsPageTemplate({ data }: FaqsPageTemplateProps) {
     faqs,
   } = data.markdownRemark.frontmatter;
 
+  const [displayedFaqs, setDisplayedFaqs] = useState<any>([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [allOpen, setAllOpen] = useState(false);
+
+  useEffect(() => {
+    setDisplayedFaqs(faqs);
+  }, []);
+
+  useEffect(() => {
+    const filteredFaqs = faqs.filter((faq: TFaq) => {
+      return faq.question.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    setDisplayedFaqs(filteredFaqs);
+  }, [searchTerm]);
+
   return (
     <>
       <Banner
@@ -26,6 +39,7 @@ export default function FaqsPageTemplate({ data }: FaqsPageTemplateProps) {
         image={banner.image}
         description={banner.subtitle}
       />
+
       <section className="relative">
         {/* Background pattern */}
         <svg
@@ -97,15 +111,51 @@ export default function FaqsPageTemplate({ data }: FaqsPageTemplateProps) {
             </linearGradient>
           </defs>
         </svg>
-        <main className="relative max-w-screen-xl mx-auto flex flex-col p-5">
-          {faqs.map((faq, i) => (
-            <FAQ
-              key={i}
-              index={i}
-              question={faq.question}
-              answer={faq.answer}
-            />
-          ))}
+        <main className="relative max-w-screen-lg mx-auto flex flex-col p-5">
+          <div className="w-full flex justify-between">
+            <div>
+              <label
+                className="text-amber-700 font-semibold mb-3 block"
+                htmlFor="search"
+              >
+                Search for a question:
+              </label>
+              <input
+                className="w-max p-3 mb-5 border border-zinc-400 rounded-md"
+                id="search"
+                placeholder="keyword..."
+                type="text"
+                value={searchTerm}
+                onChange={({ target }) => setSearchTerm(target.value)}
+              />
+            </div>
+            <div className="font-bold self-end pl-2">
+              <button
+                className="text-3xl flex justify-center items-center"
+                onClick={() => setAllOpen(prev => !prev)}
+              >
+                <p className="text-xs text-zinc-500 font-bold">
+                  {allOpen ? "collapse all" : "open all"}
+                </p>
+                {allOpen ? (
+                  <BiChevronUp className="text-sky-800" />
+                ) : (
+                  <BiChevronDown className="text-amber-800" />
+                )}
+              </button>
+            </div>
+          </div>
+          {displayedFaqs.length > 0 &&
+            displayedFaqs.map((faq: TFaq, i: number) => (
+              <FAQ
+                open={allOpen}
+                searchTerm={searchTerm}
+                key={i}
+                index={i}
+                question={faq.question}
+                answer={faq.answer}
+              />
+            ))}
         </main>
       </section>
 
