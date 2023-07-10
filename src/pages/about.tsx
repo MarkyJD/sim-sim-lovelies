@@ -11,6 +11,7 @@ export default function About({
   location: Location;
   data: TAboutPageQueryResult;
 }) {
+  console.log(data);
   return (
     <Layout location={location}>
       <AboutPageTemplate data={data} />
@@ -34,11 +35,9 @@ export const aboutPageQuery = graphql`
           subtitle
         }
         articles {
-          article {
-            content
-            heading
-            image
-          }
+          heading
+          content
+          image
         }
       }
     }

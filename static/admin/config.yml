@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-# local_backend: true
+local_backend: true
 
 media_folder: static/img
 public_folder: /img
@@ -139,6 +139,7 @@ collections:
       - label: About
         name: about
         file: "content/pages/about.md"
+        preview: false
         fields:
           - label: 'Template Key (Do not edit. Must be "about_page")'
             name: template_key
@@ -154,32 +155,19 @@ collections:
               - { label: Heading, name: heading, widget: string }
               - { label: Subtitle, name: subtitle, widget: markdown }
               - { label: "Banner Image", name: image, widget: image }
-          - label: "Articles - At least 3 articles looks best"
-            name: "articles"
+
+          - label: "Articles - 3 articles looks best"
+            name: articles
             widget: list
             fields:
               - label: Article
                 name: article
                 widget: object
                 fields:
-                  - {
-                      label: Heading,
-                      name: heading,
-                      widget: string,
-                      default: "Heading",
-                    }
-                  - {
-                      label: Content,
-                      name: content,
-                      widget: markdown,
-                      default: "Content",
-                    }
-                  - {
-                      label: Image,
-                      name: image,
-                      widget: image,
-                      default: "Image",
-                    }
+                  - { label: Heading, name: heading, widget: string }
+                  - { label: Content, name: content, widget: markdown }
+                  - { label: Image, name: image, widget: image }
+
           - label: "Contact parallax"
             name: contact_parallax
             widget: object

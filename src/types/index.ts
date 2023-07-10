@@ -72,11 +72,9 @@ export interface TBanner {
 }
 
 export interface TArticle {
-  article: {
-    heading: string;
-    content: string;
-    image: string;
-  };
+  heading: string;
+  content: string;
+  image: string;
 }
 
 export interface TFaq {

@@ -36,7 +36,7 @@ export default function AboutPageTemplate({ data }: AboutPageTemplateProps) {
           height="1280"
           preserveAspectRatio="none"
           viewBox="0 0 1280 1280"
-          className="absolute inset-0 -z-10 w-full h-full"
+          className="absolute inset-0 -z-10 h-full w-full"
         >
           <g mask='url("#SvgjsMask1859")' fill="none">
             <rect
@@ -96,8 +96,8 @@ export default function AboutPageTemplate({ data }: AboutPageTemplateProps) {
             </linearGradient>
           </defs>
         </svg>
-        <main className="relative max-w-screen-xl mx-auto flex flex-col">
-          {articles.map(({ article }, index) => (
+        <main className="relative mx-auto flex max-w-screen-xl flex-col">
+          {articles.map((article, index) => (
             <Article
               key={`${article.heading}-${index}`}
               title={article.heading}

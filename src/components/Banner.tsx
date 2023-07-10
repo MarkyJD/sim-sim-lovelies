@@ -8,20 +8,20 @@ type BannerProps = {
 };
 export default function Banner({ image, heading, description }: BannerProps) {
   return (
-    <div className="w-full p-5 pt-16 object-cover min-h-[35vh] relative ">
+    <div className="relative min-h-[35vh] w-full object-cover p-5 pt-16 ">
       {/* Shading */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 z-10 bg-black/50" />
       <img
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover"
         src={image}
         alt="banner dog img"
       />
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center pt-10 relative z-10">
-        <h1 className="text-zinc-100 text-shadow-lg  shadow-black/20 text-5xl font-playfair mb-5">
+      <div className="relative z-10 mx-auto flex max-w-screen-lg flex-col items-center pt-10">
+        <h1 className="mb-5 font-playfair  text-5xl text-zinc-100 shadow-black/20 text-shadow-lg">
           {heading}
         </h1>
         <Divider />
-        <p className="text-zinc-300 font-merriweather mt-10">{description}</p>
+        <p className="mt-10 font-merriweather text-zinc-300">{description}</p>
       </div>
     </div>
   );

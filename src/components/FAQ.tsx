@@ -40,7 +40,7 @@ export default function FAQ({
     <div
       role="button"
       onClick={toggleAnswer}
-      className="relative p-3 py-5 border-b border-zinc-400 group"
+      className="group relative border-b border-zinc-400 p-3 py-5"
     >
       <div className="flex space-x-3">
         <div className="text-2xl text-amber-600 group-hover:text-sky-800">
@@ -48,16 +48,16 @@ export default function FAQ({
         </div>
         <h3
           dangerouslySetInnerHTML={{ __html: `<p>${question}</p>` }}
-          className="font-merriweather font-semibold text-zinc-700 group-hover:text-sky-800 flex items-center justify-between"
+          className="flex items-center justify-between font-merriweather font-semibold text-zinc-700 group-hover:text-sky-800"
         ></h3>
       </div>
-      <p
-        className={`font-montserrat  overflow-hidden text-sm pl-9 ${
+      <div
+        className={`overflow-hidden  pl-9 font-montserrat text-sm ${
           !isOpen ? "h-0 pt-0" : "h-max pt-5"
         }`}
       >
         <MarkdownContent content={answer} className="prose" />
-      </p>
+      </div>
     </div>
   );
 }
