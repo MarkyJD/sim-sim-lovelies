@@ -11,6 +11,7 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
+      # ANCHOR Home Page
       - label: "Landing"
         name: "landing"
         file: "content/pages/landing.md"
@@ -136,6 +137,8 @@ collections:
                       name: "gallery_image_alt_text",
                       widget: string,
                     }
+
+      # ANCHOR About Page
       - label: About
         name: about
         file: "content/pages/about.md"
@@ -180,6 +183,7 @@ collections:
                   default: true,
                 }
 
+      # ANCHOR Our Dogs Page
       - label: Our Dogs
         name: our-dogs
         file: "content/pages/our-dogs.md"
@@ -220,6 +224,7 @@ collections:
                   widget: boolean,
                   default: true,
                 }
+      # ANCHOR faqs Page
       - label: FAQS
         name: FAQS
         file: "content/pages/faqs.md"
@@ -259,7 +264,27 @@ collections:
                   widget: boolean,
                   default: true,
                 }
-  # Site Settings
+
+      # ANCHOR Puppies page
+      - label: Puppies
+        name: puppies
+        file: "content/pages/puppies.md"
+        fields:
+          - label: 'Template Key (Do not edit. Must be "puppies_page")'
+            name: template_key
+            widget: string
+            default: puppies_page
+            required: true
+            hint: "LEAVE BLANK"
+          - label: Banner
+            name: banner
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Subtitle, name: subtitle, widget: markdown }
+              - { label: "Banner Image", name: image, widget: image }
+
+  # ANCHOR Site Settings
   - label: "Site Settings"
     name: site_settings
     files:
