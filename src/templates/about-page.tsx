@@ -7,6 +7,7 @@ import Parallax from "@/components/Parallax";
 import { TAboutPageQueryResult } from "@/types";
 import { ar } from "date-fns/locale";
 import MainSection from "@/components/MainSection";
+import Disclaimer from "@/components/About/Disclaimer";
 
 type AboutPageTemplateProps = {
   data: TAboutPageQueryResult;
@@ -18,6 +19,14 @@ export default function AboutPageTemplate({ data }: AboutPageTemplateProps) {
     contact_parallax: contactParallax,
     articles,
   } = data.markdownRemark.frontmatter;
+
+  const dummyContent = {
+    title: "Our Process",
+    subtitle:
+      "Important information about our puppies and process. Please read carefully",
+    content:
+      "Lorem ipsum dolor sit amet, ea sint proident excepteur nulla eiusmod et voluptate anim excepteur laborum non ipsum voluptate pariatur culpa ut Lorem laboris officia proident amet culpa occaecat ad adipisicing sit consequat do dolor",
+  };
 
   return (
     <>
@@ -39,6 +48,7 @@ export default function AboutPageTemplate({ data }: AboutPageTemplateProps) {
           />
         ))}
       </MainSection>
+      <Disclaimer />
 
       {contactParallax.show && (
         <Parallax image={contactParallax.image}>

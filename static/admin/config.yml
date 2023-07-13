@@ -316,3 +316,14 @@ collections:
             widget: color
             enabledAlpha: true
             allowInput: true
+
+  - label: Disclaimer
+    name: disclaimer
+    files:
+      - label: Disclaimer
+        name: disclaimer
+        file: "content/disclaimer.md"
+        fields:
+          - label: Disclaimer
+            name: disclaimer
+            widget: markdown

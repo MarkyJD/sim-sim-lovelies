@@ -6,8 +6,12 @@ import * as React from "react";
 export default function PuppiesPageTemplate() {
   return (
     <>
-      <Banner heading="Puppies" description="asldkfj" image="" />
-      <MainSection background="shiny">
+      <Banner
+        heading="Puppies"
+        description="See our latest and upcoming litters. Reserve your puppy today!"
+        image=""
+      />
+      <MainSection background="sharp">
         <Litter litter="" />
       </MainSection>
     </>

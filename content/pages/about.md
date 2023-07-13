@@ -34,6 +34,7 @@ articles:
       you are getting a healthy, well-bred puppy that will bring you years of
       joy.
     image: /img/max-harlynking-hve6qkhzl1y-unsplash.jpg
+
 contact_parallax:
   show: true
   image: /img/photo-1528362426376-962bcf4f76c7.avif
