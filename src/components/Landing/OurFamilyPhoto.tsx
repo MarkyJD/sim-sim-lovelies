@@ -9,37 +9,80 @@ type OurFamilyPhotoProps = {
   name: string;
   image: any;
   text: string;
+  small?: boolean;
 };
 
 export default function OurFamilyPhoto({
   name,
   image,
   text,
+  small = false,
 }: OurFamilyPhotoProps) {
+  if (small) {
+    return (
+      <div
+        className="group mx-auto w-max
+         p-5 sm:w-1/2  lg:w-80"
+      >
+        <div className="flex h-full w-full flex-col overflow-hidden rounded-md bg-zinc-200 drop-shadow-xl">
+          <div className="h-[200px] overflow-hidden">
+            <img
+              src={image}
+              alt={name}
+              className="h-full w-full object-cover transition-all duration-[3000ms] group-hover:scale-110"
+            />
+          </div>
+          <div className="flex items-end justify-between">
+            <div className="flex-1 p-5">
+              <h2 className="mb-2 font-montserrat text-xl font-bold text-zinc-700 decoration-amber-400 decoration-4 underline-offset-2 group-hover:underline">
+                {name}
+              </h2>
+              <MarkdownContent
+                content={text}
+                className="markdown prose w-full font-montserrat text-sm text-zinc-600"
+              />
+            </div>
+            <Link to={`/our-dogs#${toKebabCase(name)}`}>
+              <button className="btn-learn-more-amber m-5 flex items-center">
+                More
+                <span className="ml-1 text-xl">
+                  <BiArrowToRight />
+                </span>
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="w-full md:w-1/2 lg:w-96 p-5 group ">
-      <div className="w-full h-full flex flex-col rounded-md overflow-hidden bg-zinc-200 drop-shadow-xl">
-        <div className="h-[250px] overflow-hidden">
+    <div
+      className="group w-full p-5
+        md:w-1/2 lg:w-96"
+    >
+      <div className="flex h-full w-full flex-col overflow-hidden rounded-md bg-zinc-200 drop-shadow-xl">
+        <div className="h-[200px] overflow-hidden">
           <img
             src={image}
             alt={name}
-            className="object-cover h-full w-full transition-all duration-[3000ms] group-hover:scale-110"
+            className="h-full w-full object-cover transition-all duration-[3000ms] group-hover:scale-110"
           />
         </div>
 
         <div className="flex-1 p-5">
-          <h2 className="mb-2 font-montserrat text-xl font-bold text-zinc-700 group-hover:underline underline-offset-2 decoration-amber-400 decoration-4">
+          <h2 className="mb-2 font-montserrat text-xl font-bold text-zinc-700 decoration-amber-400 decoration-4 underline-offset-2 group-hover:underline">
             {name}
           </h2>
           <MarkdownContent
             content={text}
-            className="w-full text-sm text-zinc-600 font-montserrat prose markdown"
+            className="markdown prose w-full font-montserrat text-sm text-zinc-600"
           />
         </div>
         <Link to={`/our-dogs#${toKebabCase(name)}`}>
           <button className="btn-learn-more-amber m-5 flex items-center">
-            Learn More
-            <span className="text-xl ml-1">
+            More
+            <span className="ml-1 text-xl">
               <BiArrowToRight />
             </span>
           </button>

@@ -35,11 +35,9 @@ export const aboutPageQuery = graphql`
           subtitle
         }
         articles {
-          article {
-            content
-            heading
-            image
-          }
+          content
+          heading
+          image
         }
       }
     }

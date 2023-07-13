@@ -11,6 +11,7 @@ type IntroProps = {
   image?: any;
   dark?: boolean;
   className?: string;
+  leftAlign?: boolean;
 };
 
 export default function Intro({
@@ -20,13 +21,16 @@ export default function Intro({
   description,
   image = null,
   className = "",
+  leftAlign = false,
 }: IntroProps) {
   return (
     <div
-      className={`${className} max-w-screen-lg mx-auto flex flex-col items-center space-y-5 pt-5 px-5`}
+      className={`${className} ${
+        leftAlign ? "items-start" : "mx-auto items-center"
+      } flex max-w-screen-lg flex-col  space-y-5  px-5 pt-5`}
     >
       <h1
-        className={`text-2xl md:text-3xl font-merriweather xl:text-4xl text-center font-bold text-shadow-sm shadow-black/10 ${
+        className={`text-center font-merriweather text-2xl font-bold shadow-black/10 text-shadow-sm md:text-3xl xl:text-4xl ${
           dark ? "text-zinc-50" : "text-zinc-600"
         }`}
       >
@@ -35,26 +39,26 @@ export default function Intro({
       <Divider />
 
       {image ? (
-        <div className="md:flex items-center md:space-x-5 w-full py-5">
-          <div className="w-full h-full flex-1 overflow-hidden">
+        <div className="w-full items-center py-5 md:flex md:space-x-5">
+          <div className="h-full w-full flex-1 overflow-hidden">
             <img
               alt="hero"
               src={image}
-              className="h-full shadow hover:scale-110 transition-all duration-1000"
+              className="h-full shadow transition-all duration-1000 hover:scale-110"
             />
           </div>
-          <div className="py-5 md:w-1/2 h-full">
-            <h2 className="font-merriweather font-bold text-lg mb-5 text-zinc-600">
-              <span className="font-black text-shadow shadow-black/10 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-pink-600 to-purple-600">
+          <div className="h-full py-5 md:w-1/2">
+            <h2 className="mb-5 font-merriweather text-lg font-bold text-zinc-500">
+              <span className="font-black shadow-black/10 text-shadow">
                 {heading}
               </span>
             </h2>
             <MarkdownContent
               content={description}
-              className="font-montserrat text-zinc-500 my-5 prose"
+              className="prose my-5 font-montserrat text-zinc-500"
             />
             <Link to="/about">
-              <button className="transition-all font-montserrat px-5 py-2 border-2 border-sky-800 rounded-md hover:shadow-xl shadow text-gray-100 bg-sky-800 text-sm font-normal hover:bg-sky-900 hover:border-sky-900">
+              <button className="rounded-md border-2 border-sky-800 bg-sky-800 px-5 py-2 font-montserrat text-sm font-normal text-gray-100 shadow transition-all hover:border-sky-900 hover:bg-sky-900 hover:shadow-xl">
                 Learn More
               </button>
             </Link>
@@ -62,8 +66,8 @@ export default function Intro({
         </div>
       ) : (
         <div className="  h-full">
-          <h2 className="font-merriweather font-bold text-lg mb-5 text-zinc-600">
-            <span className="font-black text-shadow shadow-black/10 bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-pink-600 to-purple-600">
+          <h2 className="mb-5 font-merriweather text-lg font-bold text-zinc-500">
+            <span className=" font-black  shadow-black/10 text-shadow">
               {heading}
             </span>
           </h2>
