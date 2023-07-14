@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-# local_backend: true
+local_backend: true
 
 media_folder: static/img
 public_folder: /img
@@ -18,12 +18,10 @@ collections:
         preview: false
         fields:
           - {
-              label: "Template Key (Do not edit)",
+              label: "Template Key",
               name: template_key,
-              widget: string,
+              widget: hidden,
               default: index_page,
-              required: false,
-              hint: "LEAVE BLANK",
             }
           - label: "Hero - The full screen image with tagline and main button"
             name: hero
@@ -144,12 +142,10 @@ collections:
         file: "content/pages/about.md"
         preview: false
         fields:
-          - label: 'Template Key (Do not edit. Must be "about_page")'
+          - label: "Template Key"
             name: template_key
-            widget: string
+            widget: hidden
             default: about_page
-            required: true
-            hint: "LEAVE BLANK"
 
           - label: Banner
             name: banner
@@ -188,12 +184,10 @@ collections:
         name: our-dogs
         file: "content/pages/our-dogs.md"
         fields:
-          - label: 'Template Key (Do not edit. Must be "about_page")'
+          - label: "Template Key"
             name: template_key
-            widget: string
+            widget: hidden
             default: our_dogs_page
-            required: true
-            hint: "LEAVE BLANK"
 
           - label: Banner
             name: banner
@@ -229,12 +223,10 @@ collections:
         name: FAQS
         file: "content/pages/faqs.md"
         fields:
-          - label: 'Template Key (Do not edit. Must be "faqs_page")'
+          - label: "Template Key"
             name: template_key
-            widget: string
+            widget: hidden
             default: faqs_page
-            required: true
-            hint: "LEAVE BLANK"
 
           - label: Banner
             name: banner
@@ -270,12 +262,10 @@ collections:
         name: puppies
         file: "content/pages/puppies.md"
         fields:
-          - label: 'Template Key (Do not edit. Must be "puppies_page")'
+          - label: "Template Key"
             name: template_key
-            widget: string
+            widget: hidden
             default: puppies_page
-            required: true
-            hint: "LEAVE BLANK"
           - label: Banner
             name: banner
             widget: object
@@ -284,7 +274,191 @@ collections:
               - { label: Subtitle, name: subtitle, widget: markdown }
               - { label: "Banner Image", name: image, widget: image }
 
-  # ANCHOR Site Settings
+          # ANCHOR Litter
+          - label: Litters
+            name: litters
+            widget: list
+            fields:
+              - {
+                  label: Dummy,
+                  name: dummy,
+                  widget: boolean,
+                  default: false,
+                  hint: This is a dummy field to allow for the creation of a new litter. It will not be displayed on the site.,
+                }
+              - {
+                  label: Date of Birth,
+                  name: dob,
+                  widget: datetime,
+                  date_format: "dd.MM.yyyy",
+                  time_format: false,
+                  format: "yyyy-MM-dd",
+                }
+              - { label: Description, name: description, widget: markdown }
+              - {
+                  label: Latest,
+                  name: latest,
+                  widget: boolean,
+                  default: false,
+                  hint: This will be the first litter shown on the page.,
+                }
+              - label: Parents
+                name: parents
+                widget: object
+                fields:
+                  - label: Male
+                    name: male
+                    widget: object
+                    fields:
+                      - { label: Name, name: name, widget: string, default: "" }
+                      - { label: Image, name: image, widget: image }
+                      - {
+                          label: Blurb,
+                          name: text,
+                          widget: markdown,
+                          hint: Brief description of dog,
+                        }
+                  - label: Female
+                    name: female
+                    widget: object
+                    fields:
+                      - { label: Name, name: name, widget: string, default: "" }
+                      - { label: Image, name: image, widget: image }
+                      - {
+                          label: Blurb,
+                          name: text,
+                          widget: markdown,
+                          hint: Brief description of dog,
+                        }
+
+              # ANCHOR Litter - Pups
+              - label: Pups
+                name: pups
+                widget: list
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Color, name: color, widget: string }
+                  - { label: Sex, name: sex, widget: string }
+                  - { label: Description, name: description, widget: markdown }
+                  - { label: Sold, name: sold, widget: boolean, default: false }
+                  - {
+                      label: Reserved,
+                      name: reserved,
+                      widget: boolean,
+                      default: false,
+                    }
+                  - label: Personality
+                    name: personality
+                    widget: object
+                    fields:
+                      - {
+                          label: Shyness,
+                          name: shyness,
+                          widget: number,
+                          min: 1,
+                          max: 10,
+                          default: 5,
+                          hint: 1 = shy,
+                          10 = outgoing,
+                        }
+                      - {
+                          label: Playfulness,
+                          name: playfulness,
+                          widget: number,
+                          min: 1,
+                          max: 10,
+                          default: 5,
+                          hint: 1 = lazy,
+                          10 = playful,
+                        }
+                      - {
+                          label: Trainablity,
+                          name: trainablity,
+                          widget: number,
+                          min: 1,
+                          max: 10,
+                          default: 5,
+                          hint: 1 = stubborn,
+                          10 = easy to train,
+                        }
+                      - {
+                          label: Affectionate,
+                          name: affectionate,
+                          widget: number,
+                          min: 1,
+                          max: 10,
+                          default: 5,
+                          hint: 1 = aloof,
+                          10 = cuddly,
+                        }
+                      - {
+                          label: Energetic,
+                          name: energetic,
+                          widget: number,
+                          min: 1,
+                          max: 10,
+                          default: 5,
+                          hint: 1 = couch potato,
+                          10 = high energy,
+                        }
+                  - label: Images
+                    name: images
+                    widget: list
+                    fields:
+                      - label: Image
+                        name: image
+                        widget: object
+                        fields:
+                          - { label: Image, name: image, widget: image }
+                          - { label: Alt Text, name: alt_text, widget: string }
+
+          - label: Upcoming Litters
+            name: upcoming_litters
+            required: false
+            default: false
+            widget: list
+            fields:
+              - label: Estimated Date of Birth
+                name: eta
+                widget: datetime
+                date_format: "MM.yyyy"
+                time_format: false
+                format: "yyyy-MM"
+              - {
+                  label: Description,
+                  name: description,
+                  widget: markdown,
+                  hint: Brief blurb of upcoming litter,
+                }
+              - label: Parents
+                name: parents
+                widget: object
+                fields:
+                  - label: Male
+                    name: male
+                    widget: object
+                    fields:
+                      - { label: Name, name: name, widget: string }
+                      - { label: Image, name: image, widget: image }
+                      - {
+                          label: Blurb,
+                          name: text,
+                          widget: markdown,
+                          hint: Brief description of dog,
+                        }
+                  - label: Female
+                    name: female
+                    widget: object
+                    fields:
+                      - { label: Name, name: name, widget: string }
+                      - { label: Image, name: image, widget: image }
+                      - {
+                          label: Blurb,
+                          name: text,
+                          widget: markdown,
+                          hint: Brief description of dog,
+                        }
+
   - label: "Site Settings"
     name: site_settings
     files:
@@ -317,6 +491,7 @@ collections:
             enabledAlpha: true
             allowInput: true
 
+  # ANCHOR Disclaimer
   - label: Disclaimer
     name: disclaimer
     files:

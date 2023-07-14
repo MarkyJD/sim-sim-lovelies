@@ -8,6 +8,7 @@ import {
   formatDistanceStrict,
   formatDistanceToNowStrict,
 } from "date-fns";
+import Puppy from "./Puppy";
 
 type LitterProps = {
   litter: any;
@@ -193,7 +194,7 @@ export default function Litter({ litter }: LitterProps) {
   }
 
   return (
-    <div className="p-5 pt-10">
+    <div className="px-5 py-10">
       <div className="flex flex-wrap justify-between">
         <main className="mb-5 flex-1">
           <h2 className="mb-3 font-merriweather text-3xl font-black text-zinc-800">
@@ -234,6 +235,17 @@ export default function Litter({ litter }: LitterProps) {
           </div>
         </aside>
       </div>
+      <section>
+        <h2 className="mb-3 mt-5 font-merriweather text-3xl font-black text-zinc-800">
+          Puppies
+        </h2>
+        <Divider className="mb-5" />
+        <div>
+          {puppies.map((puppy: any) => (
+            <Puppy key={puppy.name} puppy={puppy} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

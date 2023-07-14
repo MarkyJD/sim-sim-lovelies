@@ -29,10 +29,14 @@ export default function Disclaimer() {
           Disclaimer
         </h2>
         <Divider className="my-3" />
-        <h3 className="mb-5 text-lg italic text-zinc-600">
+        <h3 className="mb-3 text-lg italic text-zinc-600">
           Important information about our process. Please read carefully
         </h3>
-        <MarkdownContent content={disclaimerContent} className="prose" />
+        <hr className="mb-5" />
+        <MarkdownContent
+          content={disclaimerContent}
+          className="prose min-w-full columns-1 md:columns-2"
+        />
       </div>
     </section>
   );

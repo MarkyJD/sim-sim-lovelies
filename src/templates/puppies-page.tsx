@@ -11,7 +11,7 @@ export default function PuppiesPageTemplate() {
         description="See our latest and upcoming litters. Reserve your puppy today!"
         image=""
       />
-      <MainSection background="sharp">
+      <MainSection background="none">
         <Litter litter="" />
       </MainSection>
     </>
