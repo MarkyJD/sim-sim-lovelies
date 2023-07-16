@@ -3,14 +3,16 @@ import React from "react";
 type MainSectionProps = {
   children: React.ReactNode;
   background?: "shiny" | "wave" | "sharp" | "sprinkle" | "none";
+  className?: string;
 };
 
 export default function MainSection({
   children,
   background = "sharp",
+  className = "",
 }: MainSectionProps) {
   return (
-    <section className="relative">
+    <section className={`relative bg-zinc-100 ${className}`}>
       {/* Background pattern */}
       {background === "shiny" && <Shiny />}
       {background === "sharp" && <Sharp />}

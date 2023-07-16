@@ -259,7 +259,7 @@ collections:
 
       # ANCHOR Puppies page
       - label: Puppies
-        name: puppies
+        name: puppies_page
         file: "content/pages/puppies.md"
         fields:
           - label: "Template Key"
@@ -274,18 +274,23 @@ collections:
               - { label: Subtitle, name: subtitle, widget: markdown }
               - { label: "Banner Image", name: image, widget: image }
 
+          - label: "Contact parallax"
+            name: contact_parallax
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image }
+              - {
+                  label: "Show Parallax",
+                  name: show,
+                  widget: boolean,
+                  default: true,
+                }
+
           # ANCHOR Litter
           - label: Litters
             name: litters
             widget: list
             fields:
-              - {
-                  label: Dummy,
-                  name: dummy,
-                  widget: boolean,
-                  default: false,
-                  hint: This is a dummy field to allow for the creation of a new litter. It will not be displayed on the site.,
-                }
               - {
                   label: Date of Birth,
                   name: dob,
@@ -332,85 +337,102 @@ collections:
                         }
 
               # ANCHOR Litter - Pups
-              - label: Pups
-                name: pups
-                widget: list
+              - label: Puppies
+                name: puppies
+                widget: object
                 fields:
-                  - { label: Name, name: name, widget: string }
-                  - { label: Color, name: color, widget: string }
-                  - { label: Sex, name: sex, widget: string }
-                  - { label: Description, name: description, widget: markdown }
-                  - { label: Sold, name: sold, widget: boolean, default: false }
-                  - {
-                      label: Reserved,
-                      name: reserved,
-                      widget: boolean,
-                      default: false,
-                    }
-                  - label: Personality
-                    name: personality
-                    widget: object
-                    fields:
-                      - {
-                          label: Shyness,
-                          name: shyness,
-                          widget: number,
-                          min: 1,
-                          max: 10,
-                          default: 5,
-                          hint: 1 = shy,
-                          10 = outgoing,
-                        }
-                      - {
-                          label: Playfulness,
-                          name: playfulness,
-                          widget: number,
-                          min: 1,
-                          max: 10,
-                          default: 5,
-                          hint: 1 = lazy,
-                          10 = playful,
-                        }
-                      - {
-                          label: Trainablity,
-                          name: trainablity,
-                          widget: number,
-                          min: 1,
-                          max: 10,
-                          default: 5,
-                          hint: 1 = stubborn,
-                          10 = easy to train,
-                        }
-                      - {
-                          label: Affectionate,
-                          name: affectionate,
-                          widget: number,
-                          min: 1,
-                          max: 10,
-                          default: 5,
-                          hint: 1 = aloof,
-                          10 = cuddly,
-                        }
-                      - {
-                          label: Energetic,
-                          name: energetic,
-                          widget: number,
-                          min: 1,
-                          max: 10,
-                          default: 5,
-                          hint: 1 = couch potato,
-                          10 = high energy,
-                        }
-                  - label: Images
-                    name: images
+                  - label: Puppy
+                    name: puppy
                     widget: list
                     fields:
-                      - label: Image
-                        name: image
+                      - { label: Name, name: name, widget: string }
+                      - { label: Color, name: color, widget: string }
+                      - { label: Sex, name: sex, widget: string }
+                      - {
+                          label: Description,
+                          name: description,
+                          widget: markdown,
+                        }
+                      - {
+                          label: Sold,
+                          name: sold,
+                          widget: boolean,
+                          default: false,
+                        }
+                      - {
+                          label: Reserved,
+                          name: reserved,
+                          widget: boolean,
+                          default: false,
+                        }
+                      - label: Personality
+                        name: personality
                         widget: object
                         fields:
-                          - { label: Image, name: image, widget: image }
-                          - { label: Alt Text, name: alt_text, widget: string }
+                          - {
+                              label: Shyness,
+                              name: shyness,
+                              widget: number,
+                              min: 1,
+                              max: 10,
+                              default: 5,
+                              hint: 1 = shy,
+                              10 = outgoing,
+                            }
+                          - {
+                              label: Playfulness,
+                              name: playfulness,
+                              widget: number,
+                              min: 1,
+                              max: 10,
+                              default: 5,
+                              hint: 1 = lazy,
+                              10 = playful,
+                            }
+                          - {
+                              label: Trainaility,
+                              name: trainability,
+                              widget: number,
+                              min: 1,
+                              max: 10,
+                              default: 5,
+                              hint: 1 = stubborn,
+                              10 = easy to train,
+                            }
+                          - {
+                              label: Affectionate,
+                              name: affectionate,
+                              widget: number,
+                              min: 1,
+                              max: 10,
+                              default: 5,
+                              hint: 1 = aloof,
+                              10 = cuddly,
+                            }
+                          - {
+                              label: Energetic,
+                              name: energetic,
+                              widget: number,
+                              min: 1,
+                              max: 10,
+                              default: 5,
+                              hint: 1 = couch potato,
+                              10 = high energy,
+                            }
+                      - label: Images
+                        name: images
+                        widget: list
+                        fields:
+                          - label: Image
+                            name: image
+                            widget: object
+                            fields:
+                              - { label: Image, name: image, widget: image }
+                              - {
+                                  label: Alt Text,
+                                  name: alt_text,
+                                  widget: string,
+                                }
 
           - label: Upcoming Litters
             name: upcoming_litters
