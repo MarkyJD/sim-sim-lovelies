@@ -21,8 +21,8 @@ export default function OurFamilyPhoto({
   if (small) {
     return (
       <div
-        className="group mx-auto w-max
-         p-5 sm:w-1/2  lg:w-80"
+        className=" group mx-auto
+           p-5 sm:w-1/2 lg:w-80"
       >
         <div className="flex h-full w-full flex-col overflow-hidden rounded-md bg-zinc-200 drop-shadow-xl">
           <div className="h-[200px] overflow-hidden">
@@ -32,25 +32,26 @@ export default function OurFamilyPhoto({
               className="h-full w-full object-cover transition-all duration-[3000ms] group-hover:scale-110"
             />
           </div>
-          <div className="flex items-end justify-between">
-            <div className="flex-1 p-5">
-              <h2 className="mb-2 font-montserrat text-xl font-bold text-zinc-700 decoration-amber-400 decoration-4 underline-offset-2 group-hover:underline">
-                {name}
-              </h2>
-              <MarkdownContent
-                content={text}
-                className="markdown prose w-full font-montserrat text-sm text-zinc-600"
-              />
-            </div>
-            <Link to={`/our-dogs#${toKebabCase(name)}`}>
-              <button className="btn-learn-more-amber m-5 flex items-center">
-                More
-                <span className="ml-1 text-xl">
-                  <BiArrowToRight />
-                </span>
-              </button>
-            </Link>
+          <div className="flex-1 p-5">
+            <h2 className="mb-2 font-montserrat text-xl font-bold text-zinc-700 decoration-amber-400 decoration-4 underline-offset-2 group-hover:underline">
+              {name}
+            </h2>
+            <MarkdownContent
+              content={text}
+              className="markdown prose max-h-16  font-montserrat text-sm text-zinc-600"
+            />
           </div>
+          <Link
+            to={`/our-dogs#${toKebabCase(name)}`}
+            className="flex w-full justify-end bg-zinc-700/10 backdrop-blur-sm"
+          >
+            <button className="btn-learn-more-amber m-3 flex items-center">
+              More
+              <span className="ml-1 text-xl">
+                <BiArrowToRight />
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     );

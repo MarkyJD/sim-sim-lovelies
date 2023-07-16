@@ -11,7 +11,6 @@ export default function About({
   location: Location;
   data: TAboutPageQueryResult;
 }) {
-  console.log(data);
   return (
     <Layout location={location}>
       <AboutPageTemplate data={data} />

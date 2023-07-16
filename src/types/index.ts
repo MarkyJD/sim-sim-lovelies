@@ -1,3 +1,4 @@
+import { ContactCTA } from "@/components/Landing/ContactCTA";
 export interface TOurFamily {
   our_family_title: string;
   our_family_subtitle: string;
@@ -82,6 +83,50 @@ export interface TFaq {
   answer: string;
 }
 
+export interface TPersonality {
+  affectionate: string;
+  energetic: string;
+  playfulness: string;
+  shyness: string;
+  trainability: string;
+}
+
+export interface TPup {
+  name: string;
+  color: string;
+  description: string;
+  reserved: boolean;
+  sold: boolean;
+  sex: string;
+  images: [
+    {
+      image: string;
+      alt_text: string;
+    }
+  ];
+  personality: TPersonality;
+}
+
+export interface TLitter {
+  description: string;
+  dob: string;
+  parents: {
+    male: {
+      name: string;
+      image: string;
+      text: string;
+    };
+    female: {
+      name: string;
+      image: string;
+      text: string;
+    };
+  };
+  puppies: {
+    puppy: [TPup];
+  };
+}
+
 export interface TAboutPageFrontmatter {
   banner: TBanner;
   articles: [TArticle];
@@ -100,6 +145,15 @@ export interface TFaqsPageFrontmatter {
   };
 }
 
+export interface TPuppiesPageFrontmatter {
+  banner: TBanner;
+  contact_parallax: {
+    show: boolean;
+    image: string;
+  };
+  litters: [TLitter];
+}
+
 export interface TAboutPageQueryResult {
   markdownRemark: {
     frontmatter: TAboutPageFrontmatter;
@@ -108,5 +162,11 @@ export interface TAboutPageQueryResult {
 export interface TFaqsPageQueryResult {
   markdownRemark: {
     frontmatter: TFaqsPageFrontmatter;
+  };
+}
+
+export interface TPuppiesPageQueryResult {
+  markdownRemark: {
+    frontmatter: TPuppiesPageFrontmatter;
   };
 }
